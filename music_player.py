@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[19]:
+
 
 
 # Necessary Library Files
@@ -20,7 +20,7 @@ from mutagen.mp3 import MP3
 from pygame import mixer
 
 
-# In[20]:
+
 
 
 # Root Window and Its Properties
@@ -32,7 +32,6 @@ root.title("SpeakerBox")
 root.iconbitmap(r'images/speakerbox.ico')
 
 
-# In[21]:
 
 
 # Creating Status Bar
@@ -41,7 +40,6 @@ statusbar = ttk.Label(root, text="Welcome to Speaker Box", relief=SUNKEN, anchor
 statusbar.pack(side=BOTTOM, fill=X)
 
 
-# In[22]:
 
 
 # Functions Related to Menu Bar
@@ -65,7 +63,6 @@ def about_us():
     tkinter.messagebox.showinfo('About SpeakerBox', 'This is a music player build using Python Tkinter by Kishlay Kishore, Tavish Gupta,')
 
 
-# In[23]:
 
 
 # Create the menubar
@@ -83,13 +80,11 @@ menubar.add_cascade(label="More", menu=subMenu)
 subMenu.add_command(label="About Us", command=about_us)
 
 
-# In[24]:
 
 
 playlist =[]
 
 
-# In[25]:
 
 
 # Creating Frames
@@ -103,19 +98,17 @@ middleframe.pack(side=LEFT,fill=X)
 rightframe.pack(side=LEFT,fill=X)"""
 
 
-# In[26]:
+
 
 
 mixer.init()                    #Initialising the Mixer
 
 
-# In[27]:
 
 
 # LEFT FRAME
 
 
-# In[28]:
 
 
 # Functions related to Left Frame
@@ -127,7 +120,6 @@ def del_song():
     playlist.pop(selected_song)
 
 
-# In[29]:
 
 
 # Elements in Left Frame
@@ -146,13 +138,11 @@ delBtn = Button(leftframe, image=delPhoto, command=del_song,bg="#FBB091")
 delBtn.pack(side=RIGHT,padx=20,pady=3)
 
 
-# In[30]:
 
 
 # MIDDLE FRAME
 
 
-# In[31]:
 
 
 # Functions related to Middle Frame
@@ -265,7 +255,6 @@ def mute_music():
         muted = TRUE
 
 
-# In[32]:
 
 
 # Elements in Middle Frame 
@@ -313,13 +302,11 @@ mixer.music.set_volume(0.7)
 scale.grid(row=0, column=1, pady=15, padx=30)
 
 
-# In[33]:
 
 
 # RIGHT FRAME
 
 
-# In[34]:
 
 
 # Functions in Right Frame
@@ -336,10 +323,7 @@ def play_ml():
     
 
 
-# In[35]:
-
-
-"""# Elements in Right Frame
+# Elements in Right Frame
 topframe_right= Frame(rightframe)
 topframe_right.pack(pady=5)
 
@@ -384,10 +368,9 @@ label3.grid(row=1,column=2,padx=30,pady=5)
 
 ml_playPhoto = PhotoImage(file='images/play-button.png')
 ml_playBtn = ttk.Button(bottomframe_right, image=ml_playPhoto, command=play_ml)
-ml_playBtn.grid(row=2,column=1, padx=10,pady =5)"""
+ml_playBtn.grid(row=2,column=1, padx=10,pady =5)
 
 
-# In[36]:
 
 
 def on_closing():
